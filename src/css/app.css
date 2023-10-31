@@ -1,0 +1,162 @@
+:root {
+    --message-deff-color: rgb(0, 255, 110);
+    --message-error-color: rgb(255, 0, 0);
+    --backgraund-color: rgb(0 0 0 / 48%);
+    --white: #ffffff;
+    --greyLight-1: #e4ebf5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #232323;
+    --borderColor: rgb(0 0 0 / 48%);
+
+    --shadow: inset 0.2rem 0.2rem 0.5rem var(--greyLight-2), inset -0.2rem -0.2rem 0.5rem var(--white);
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 5px;
+    margin: 0;
+    background-color: var(--backgraund-color);
+    font-family: monospace;
+}
+
+.row{
+  margin-left: 0;
+}
+
+#header {
+    width: 100%;
+    height: 15vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#header-user{
+    text-align: left;
+    margin-left: 5px;
+}
+
+#header-time{
+    text-align: right;
+    margin-right: 5px;
+}
+
+.search_input{
+    width: 100%;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    padding-left: 1.4rem;
+    box-shadow: var(--shadow);
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+}
+
+.search_input:focus,
+.search_input:focus-visible,
+.search_input:active {
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#main-head{
+  width: 100%;
+  height: 5vh;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: xx-large;
+}
+
+#main-body {
+    width: 99%;
+    height: 90vh;
+    position: absolute;
+    background-color: black;
+}
+
+
+#server{
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+#deff-log{
+    color: var(--message-deff-color);
+}
+
+#error-log{
+    color: var(--message-error-color);
+}
+
+#list-rooms{
+    height: 90vh;
+    overflow-y: auto;
+    border-right-style: inset;
+    border-right-color: var(--borderColor);
+    border-right-width: 3px;
+}
+
+#list-clients{
+    padding-left: 0;
+}
+
+#list-rooms::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+
+.room-name{
+    color: var(--white);
+    cursor: pointer;
+}
+
+.room-name:hover{
+    color: var(--message-deff-color);
+    cursor: pointer;
+}
+
+#list-clients-online{
+    width: 100%;
+    height: 45vh;
+    overflow: auto;
+    border-bottom-style: inset;
+    border-bottom-color: var(--borderColor);
+    border-bottom-width: 3px;
+}
+
+#list-clients-offline {
+    width: 100%;
+    height: 45vh;
+    overflow: auto;
+}
+
+#list-clients-online::-webkit-scrollbar,
+#list-clients-offline::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.online-client{
+    color: var(--message-deff-color);
+}
+
+.offline-client{
+    color: var(--message-error-color);
+}
+
+.offline-client,
+.online-client{
+    cursor: pointer;
+}
+
+.offline-client:hover,
+.online-client:hover{
+    color: var(--white);
+    cursor: pointer;
+}
